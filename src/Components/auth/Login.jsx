@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import logo from '../../assets/logo/logo.png';
-import fondo from '../../assets/Fondo/coffee.jpg';
+// fondo is served from the public/ folder; reference it by URL instead of importing
+const fondo = '/Fondo/coffee.jpg';
 // Tailwind CSS eliminado
 import './Login.css';
 
@@ -23,16 +24,7 @@ const Login = () => {
 
   return (
     <div className="login-container" style={{ backgroundImage: `url(${fondo})` }}>
-      {/* Encabezado con nombre y logo de la empresa */}
-      <header className="Encabezado-login">
-        <div className="Contenedor">
-          <Link to="/">
-            <img src={logo} alt="Logo" />
-          </Link>
-        </div>
-        <h1 className="Frase-Encabezado">Donde el café cobra sentido</h1>
-      </header>
-
+      
       {/* inicio de sesión - ingreso de datos*/}
       <form className="login">
         <h2 className="titulo-login">inicio de sesión</h2>
@@ -65,7 +57,7 @@ const Login = () => {
           <label className="user-label">CONTRASEÑA</label>
         </div>
 
-        <button type="button" onClick={handleLogin}>Iniciar sesión</button>
+  <button type="button" className="button-login" onClick={handleLogin}>Iniciar sesión</button>
         <a className="boton-registro" href="/register">Registro</a>
       </form>
     </div>

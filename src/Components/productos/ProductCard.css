@@ -71,13 +71,14 @@
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin-top: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .precio-producto {
     font-size: 1.1em;
     font-weight: bold;
-    color: #b1780d;
+    color: #101010;
 }
 
 .boton-agregar {

@@ -79,12 +79,12 @@ const Header = () => {
         <div className="Contenedor-secundario">
           {/* Botón de registro */}
           <Link to="/register">
-            <button id="registro">Registrate</button>
+            <button className='boton-registro' id="registro">Registrate</button>
           </Link>
 
           {/* Botón de inicio de sesión */}
           <Link to="/login">
-            <button id="login">Iniciar sesión</button>
+            <button className='boton-login' id="login">Iniciar sesión</button>
           </Link>
         </div>
       </main>
