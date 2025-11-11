@@ -99,26 +99,40 @@
 
 .Contenedor-secundario {
     display: flex;
-    justify-content: space-between;
     justify-content: end;
+    
+    gap: 15px;
 }
 
-button {
-    background-color: #000000;
-    color: #f7f4f4;
+.boton-login {
+    background-color: #ffffff;
+    color: #0c0c0c;
     border: none;
     cursor: pointer;
     border-radius: 30px;
     width: 125px;
-    height: 50px;
+    height: 30px;
     transition: 0.3s;
-    font-size: 18px;
-    font-weight: 350;
-    margin: 10px;
+    font-size: 17px;
+    font-weight: 400;
+    /* Elimina el margin si usas gap para separación */
+}
+.boton-registro {
+    background-color: #080808;
+    color: #f9f8f8;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 120px;
+    height: 30px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-weight: 400;
+    /* Elimina el margin si usas gap para separación */
 }
 
-button:hover {
+.Contenedor-secundario button:hover {
     background-color: #D98324;
     box-shadow: 0 0 0 3px #f0a95d;
-    color: #161313;
+    color: #f8f7f7;
 }
