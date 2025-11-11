@@ -79,12 +79,7 @@ const Home = () => {
         </section>
 
         {/* Sección de promociones */}
-        <section className="promo">
-          <div className="promo-text">
-            <h2>Promociones Especiales</h2>
-            <p>¡Descubre nuestras ofertas semanales y eventos únicos!</p>
-          </div>
-        </section>
+        
       </main>
     </div>
   );

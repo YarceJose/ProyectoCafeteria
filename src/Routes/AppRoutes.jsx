@@ -26,6 +26,7 @@ import Menu from '../Pages/menu/Menu';
 import LoginPage from '../Pages/auth/LoginPage';
 import RegisterPage from '../Pages/auth/RegisterPage';
 import Header from '../Components/header/Header';
+import Footer from '../Components/Footer/Footer';
 
 // El componente AppRoutes solo debe definir las rutas,
 // el <Router> debería envolverse a nivel superior (ej: en index.jsx o App.jsx).
@@ -49,6 +50,7 @@ const AppRoutes = () => {
         {/* Ruta de registro - Página de registro de usuarios */}
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
+      <Footer />
     </>
   );
 };
