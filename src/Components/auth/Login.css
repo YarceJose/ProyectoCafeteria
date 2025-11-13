@@ -1,156 +1,169 @@
-.login-container {
-    color: white;
-    font-family: "Roboto", sans-serif;
+/* Contenedor principal: Estilo base igual al registro */
+.login-page {
+    font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 100vh;
-    padding: 100px;
-    background-size: cover;
-    background-position: center;
+    min-height: 100vh;
+    background-color: rgba(249, 245, 245, 0.8);
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
-}
-
-/* Encabezado de la página de login */
-.Encabezado-login {
-    height: 150px;
-    width: 50%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 50px;
-    background-color: #654828;
+    justify-content: center; /* Centrado vertical adicional para login */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.Frase-Encabezado {
-    font-size: 20px;
-    font-weight: 900;
-    color: #f1f3f6;
-    text-align: justify;
-    margin-left: 20px;
+/* === CONTENIDO DIVIDIDO === */
+.login-page .contenido-principal {
+    display: flex;
+    width: 100%;
+    max-width: 900px; /* Ligeramente más compacto que el registro */
+    background-color: rgb(237, 236, 236);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(91, 89, 89, 0.5);
+    min-height: 500px;
 }
 
-/* Contenedor del logo */
-.Contenedor {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    justify-content: space-between;
-    margin-left: 10px;
+/* Sección Izquierda: Imagen */
+.login-page .seccion-imagen {
+    flex: 1;
+    display: flex;
+    background-color: #000;
 }
 
-/* Imagen del logo */
-.Contenedor img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
+.login-page .imagen-lateral {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Contenedor principal del formulario de login */
-.login {
-    height: 380px;
-    width: 50%;
+/* Sección Derecha: Formulario */
+.login-page .Login {
+    flex: 1;
+    padding: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    background-size: cover;
-    background-position: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
+    background-color: #ffffff;
+    color: #333;
 }
 
-.titulo-login {
-    font-size: 40px;
-    font-weight: 900;
-    color: #f1f3f6;
+.login-page .titulo-Login {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #654828;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-/* Grupo de entrada de texto */
-.input-group {
+/* === INPUTS Y LABELS (Estilo idéntico al registro) === */
+.login-page .input-group {
     position: relative;
+    width: 100%;
 }
 
-/* Estilos para los campos de entrada de texto */
-.input {
-    border: solid 1.5px #9e9e9e;
-    border-radius: 1rem;
-    background: none;
-    padding: 1rem;
+.login-page .input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 12px 15px;
     font-size: 1rem;
-    color: #f5f5f5;
-    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-/* Etiqueta del campo de entrada */
-.user-label {
+.login-page .input:hover {
+    background-color: #ffffff;
+    border-color: #999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.login-page .user-label {
     position: absolute;
-    left: 20px;
-    color: #e8e8e8;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: 0 5px;
+    color: #888;
+    font-size: 0.9rem;
     pointer-events: none;
-    transform: translateY(1rem);
-    transition: 190ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s ease;
 }
 
-/* Estilos para el campo de entrada cuando está en foco o es válido */
-.input:focus,
-input:valid {
+/* Estados Focus y Valid */
+.login-page .input:focus, 
+.login-page .input:valid {
     outline: none;
-    border: 2px solid #f1f3f6;
+    background-color: #ffffff;
+    border: 2px solid #654828;
 }
 
-/* Estilos para la etiqueta del campo de entrada cuando el campo está en foco o es válido */
-.input:focus~label,
-input:valid~label {
-    transform: translateY(-50%) scale(0.8);
-    background-color: #2d2b2b;
-    padding: 0 .2em;
-    color: #e9ebed;
+.login-page .input:focus ~ .user-label,
+.login-page .input:valid ~ .user-label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #654828;
+    font-weight: 600;
+    background-color: #ffffff;
+    z-index: 10;
 }
 
-/* Estilos generales para los botones */
-.button-login {
-    width: 170px;
-    height: 40px;
-    border-radius: 40px;
+/* === BOTONES === */
+.login-page .Contenedor-botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.login-page button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 4%) 0 0 8px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 15px;
-    transition: all 0.5s ease;
+    transition: 0.3s;
 }
 
-/* Estilos para el botón cuando el cursor está sobre él */
-.button-login:hover {
-    background-color: hsl(39, 91%, 53%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(241, 186, 67) 0px 0px 0px 0px;
+/* Botón secundario (Gris) */
+.login-page .btn-registro {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.login-page .btn-registro:hover {
+    background-color: #d6d6d6;
 }
 
-/* Estilos para el botón cuando está activo (presionado) */
-.button-login:active {
-    background-color: hsl(38, 98%, 49%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(220, 150, 10) 0px 0px 0px 0px;
-    transform: translateY(5px);
-    transition: 40ms;
+/* Botón primario (Café) */
+.login-page .btn-ingresar {
+    background-color: #654828;
+    color: white;
+}
+.login-page .btn-ingresar:hover {
+    background-color: #8a6236;
+    box-shadow: 0 4px 12px rgba(101, 72, 40, 0.4);
 }
 
-/* Estilos para el botón de registro */
-.boton-registro {
-    color: rgb(255, 255, 255);
-    gap: 50px;
+/* Enlace simple para volver */
+.login-page .contenedor-volver {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-page .link-volver {
+    color: #888;
+    font-size: 0.9rem;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.boton-registro:hover {
-    text-decoration: none;
-    color: rgb(161, 113, 9);
-    transition: all 0.5s ease;
+.login-page .link-volver:hover {
+    color: #654828;
+    text-decoration: underline;
 }

@@ -1,17 +1,31 @@
-// API functions for products
+/**
+ * API de Productos
+ *
+ * Funciones para obtener informacion de productos.
+ * Actualmente usan datos simulados (mock data).
+ * En produccion, estas funciones harian fetch a un servidor real.
+ *
+ * @module Api/products
+ */
+
+/**
+ * Obtiene lista de productos filtrados por categoria.
+ *
+ * @async
+ * @param {string} [category='all'] - Categoria a filtrar ('all', 'drinks', 'food')
+ * @returns {Promise<Array>} Array de productos que coinciden con la categoria
+ *
+ * @example
+ * const allProducts = await getProducts();
+ * const drinks = await getProducts('drinks');
+ */
+// Funciones de la API para productos
 
 export const getProducts = async (category = 'all') => {
-  // Mock data - in a real app, this would fetch from an API
+  // Datos simulados — en una aplicación real esto se obtendría desde una API
   const products = {
     drinks: [
-      {
-        id: 1,
-        name: "Americano",
-        description: "Un café suave y aromático, preparado con espresso y agua caliente. Ideal para quienes buscan una experiencia clásica con cuerpo ligero y sabor equilibrado.",
-        price: "5000$",
-        image: "/Cafeamericano.jpeg",
-        category: "drinks"
-      },
+      
       {
         id: 2,
         name: "Espreso",
@@ -102,6 +116,7 @@ export const getProducts = async (category = 'all') => {
     ]
   };
 
+  // Retornar todos los productos o solo los de la categoria solicitada
   if (category === 'all') {
     return [...products.drinks, ...products.food];
   }
@@ -109,7 +124,18 @@ export const getProducts = async (category = 'all') => {
   return products[category] || [];
 };
 
+/**
+ * Obtiene un producto especifico por su ID.
+ *
+ * @async
+ * @param {number} id - ID del producto a buscar
+ * @returns {Promise<Object|undefined>} Objeto del producto o undefined si no existe
+ *
+ * @example
+ * const product = await getProductById(1);
+ */
 export const getProductById = async (id) => {
+  // Obtener todos los productos y buscar el que coincida con el ID
   const allProducts = await getProducts();
   return allProducts.find(product => product.id === parseInt(id));
 };
