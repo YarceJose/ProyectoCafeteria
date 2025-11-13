@@ -1,0 +1,97 @@
+/**
+ * Estilos para el componente Footer (Footer.jsx)
+ */
+
+/* Contenedor principal del footer */
+.footer-container {
+    background-color: #382414; /* Color café oscuro, muy apropiado */
+    color: #f5e9d9; /* Un color crema suave para el texto */
+    padding: 50px 20px 20px 20px; /* Relleno: 50px arriba/abajo, 20px lados */
+    font-family: Arial, sans-serif; /* Aseguramos una fuente legible */
+}
+
+/* Contenedor del contenido, centrado y con layout flex */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones pasen abajo en móviles */
+    justify-content: space-around; /* Distribuye las secciones */
+    gap: 30px; /* Espacio entre las secciones */
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+/* Estilo base para cada sección (Marca, Links, Contacto, Social) */
+.footer-section {
+    flex: 1; /* Cada sección trata de ocupar el mismo espacio */
+    min-width: 200px; /* Ancho mínimo antes de que se reordenen */
+}
+
+/* Estilos para los títulos de cada sección */
+.footer-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: #d8c291; /* Color dorado/acento para los títulos */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #5a3e2a; /* Línea sutil de acento */
+}
+
+/* Estilos específicos para las listas de navegación y contacto */
+.footer-links ul,
+.footer-contact ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para todos los enlaces en el footer */
+.footer-links a,
+.footer-social a {
+    color: #f5e9d9; /* Mismo color crema del texto */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Efecto hover para los enlaces */
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #d8c291; /* Cambia a color dorado al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Contenedor para los iconos/enlaces de redes sociales */
+.social-icons {
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces de redes */
+}
+
+/* Barra inferior de derechos de autor */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px; /* Espacio por encima de la barra */
+    padding-top: 20px; /* Relleno por encima del texto */
+    border-top: 1px solid #5a3e2a; /* Línea separadora */
+    font-size: 0.875rem; /* 14px */
+    color: #aaa; /* Un color más tenue para el copyright */
+}
+
+/* -- Media Query para Responsividad -- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        align-items: center; /* Centra las secciones */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Ocupa todo el ancho en móviles */
+    }
+
+    .social-icons {
+        justify-content: center; /* Centra los iconos de redes en móviles */
+    }
+}
