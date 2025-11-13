@@ -1,52 +1,16 @@
-/**
- * Componente Login - Formulario de Inicio de Sesión
- *
- * Este componente presenta un formulario de login con dos campos (usuario y contraseña)
- * y valida las credenciales contra credenciales mock (admin/admin). En una aplicación
- * real, estas credenciales se validarían contra un servidor backend.
- *
- * @component
- * @returns {JSX.Element} Formulario de login con imagen lateral
- *
- * @description
- * Características:
- * - Formulario con campos de usuario y contraseña
- * - Validación de credenciales (usuario: admin, contraseña: admin)
- * - Redirección al home si el login es exitoso
- * - Mensaje de error si las credenciales son incorrectas
- * - Imagen lateral para contexto visual
- * - Botones de navegación a registro y login
- *
- * @state
- * - formData: Objeto con username y password del usuario
- *
- * @example
- * <Login />
- *
- * @note
- * Credenciales de prueba: usuario: admin, contraseña: admin
- * En producción, reemplazar validación mock con llamadas a API
- */
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
-// Usamos la misma imagen lateral que en el registro para consistencia visual
+// Importamos la imagen para el lateral izquierdo
 import coffee from '../../assets/registro-login/login-registro.png';
 
 const Login = () => {
-  // Estado del formulario: almacena los valores de usuario y contraseña
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
-  // Hook para navegar entre rutas de React Router
   const navigate = useNavigate();
 
-  /**
-   * Maneja el cambio de valores en los inputs del formulario
-   * @param {Event} e - Evento del input que disparó el cambio
-   */
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -55,19 +19,12 @@ const Login = () => {
     }));
   };
 
-  /**
-   * Maneja el envío del formulario de login
-   * Valida las credenciales y redirige al home si son correctas
-   * @param {Event} e - Evento del formulario
-   */
   const handleLogin = (e) => {
     e.preventDefault();
-    // Verificamos las credenciales (nota: en producción validar contra API)
+    // Lógica simple de validación (admin/admin)
     if (formData.username === "admin" && formData.password === "admin") {
-      // Credenciales correctas - navegar al home
       navigate('/');
     } else {
-      // Credenciales incorrectas - mostrar mensaje de error
       alert("Credenciales incorrectas. Inténtalo de nuevo.");
     }
   };
@@ -116,14 +73,20 @@ const Login = () => {
           </div>
 
           <div className="Contenedor-botones">
-            {/* Botón secundario lleva al registro */}
+            {/* Botón secundario */}
             <button type="button" className="btn-registro" onClick={() => navigate('/register')}>
               REGISTRARSE
             </button>
-            {/* Botón primario envía el formulario */}
+            {/* Botón primario */}
             <button type="submit" className="btn-ingresar">
               INGRESAR
             </button>
+          </div>
+
+          {/* === NUEVO: Texto "¿No tienes una cuenta? Únete" === */}
+          <div className="texto-crear-cuenta">
+            <span>¿No tienes una cuenta?</span>
+            <Link to="/register" className="link-unete">Únete</Link>
           </div>
 
           <div className="contenedor-volver">

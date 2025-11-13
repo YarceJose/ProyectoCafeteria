@@ -36,9 +36,9 @@ import React from 'react';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-  // Nota: El botón de agregar es decorativo por ahora
-  // En el futuro se conectará con un carrito de compras
+  
   return (
+    
     <article className="card">
       <img
         className="imagen-producto"
@@ -51,7 +51,6 @@ const ProductCard = ({ product }) => {
       </div>
         <div className="card-footer">
           <span className="precio-producto">{product.price}</span>
-          <button className="boton-agregar">+</button>
         </div>
     </article>
   );

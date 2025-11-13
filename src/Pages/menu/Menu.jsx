@@ -127,35 +127,8 @@ const Menu = () => {
       price: "$5000",
       image: "/Latte.jpeg"
     },
-    {
-      id: 5,
-      img: "/Cafeamericano.jpeg",
-      name: "Americano",
-      description: "Un café suave y aromático, preparado con espresso y agua caliente. Ideal para quienes buscan una experiencia clásica con cuerpo ligero y sabor equilibrado.",
-      price: "$5000",
-      image: "/Cafeamericano.jpeg"
-    },
-    {
-      id: 6,
-      name: "Espreso",
-      description: "Intenso y concentrado, el espreso es la base de todo buen café. Servido en una porción pequeña, ofrece un sabor profundo y un golpe de energía instantáneo.",
-      price: "$5000",
-      image: "/expreso.jpeg"
-    },
-    {
-      id: 7,
-      name: "Capuchino",
-      description: "Una deliciosa combinación de espresso, leche vaporizada y espuma cremosa. Su textura sedosa y su sabor equilibrado lo hacen perfecto para cualquier momento del día.",
-      price: "$5000",
-      image: "/Capuchino.jpeg"
-    },
-    {
-      id: 8,
-      name: "Latte",
-      description: "Cálido y reconfortante, el latte mezcla espresso con abundante leche vaporizada. Su suavidad lo convierte en la elección ideal para quienes prefieren un café más ligero y personalizable.",
-      price: "$5000",
-      image: "/Latte.jpeg"
-    }
+    
+    
   ];
 
   /**
