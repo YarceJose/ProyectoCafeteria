@@ -81,19 +81,3 @@
     color: #101010;
 }
 
-.boton-agregar {
-    background-color: #b1780d;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.boton-agregar:hover {
-    background-color: #fbba26;
-}

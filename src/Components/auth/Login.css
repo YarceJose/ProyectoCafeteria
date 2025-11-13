@@ -157,13 +157,41 @@
 }
 
 .login-page .link-volver {
-    color: #888;
-    font-size: 0.9rem;
-    text-decoration: none;
+    color: #090909;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
 .login-page .link-volver:hover {
     color: #654828;
-    text-decoration: underline;
+    
 }
+
+/* ... (Mantiene todo tu CSS anterior) ... */
+
+/* === TEXTO "¿No tienes una cuenta? Únete" === */
+.login-page .texto-crear-cuenta {
+    text-align: center;
+    margin-top: 20px;      /* Separación de los botones de arriba */
+    margin-bottom: 10px;   /* Separación del enlace "Volver" de abajo */
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.login-page .link-unete {
+    margin-left: 5px;
+    color: #654828;        /* Color café de tu marca */
+    font-weight: 700;      /* Negrita para destacar */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-page .link-unete:hover {
+    color: #8a6236;
+}
+
+/* Ajuste opcional para el enlace de volver si quedó muy pegado */
+.login-page .contenedor-volver {
+    margin-top: 5px; 
+}
+

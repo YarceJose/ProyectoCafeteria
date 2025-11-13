@@ -1,21 +1,19 @@
-/* 🌐 Contenedor principal del Home */
+/* 🌐 CONTENEDOR PRINCIPAL */
 .home-container {
     background-color: #faf8f6;
-    /* Fondo cálido y suave */
     font-family: 'Segoe UI', sans-serif;
-    /* Tipografía moderna */
-    color: #4b2e2e;
-    /* Color principal del texto */
-    height: 140vh;
+    color: #111010;
+    height: 280vh; 
 }
 
-/* 🟫 Sección Hero con imagen de bienvenida */
+/* ============================================================ */
+/* 🟫 SECCIÓN HERO (Bienvenida) */
+/* ============================================================ */
 .welcome {
     text-align: center;
     margin: 0 auto 4rem;
     max-width: 1440px;
     padding: 1rem 1rem;
-    border-radius:1rem;
     width: 100%;
 }
 
@@ -32,9 +30,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     will-change: transform;
-    opacity: 1;
 }
 
 .welcome-overlay {
@@ -67,11 +64,7 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Efecto sutil al pasar el mouse por encima */
-.welcome-image {
-    position: relative;
-}
-
+/* Efecto Hover Hero */
 .welcome-image::after {
     content: '';
     position: absolute;
@@ -93,11 +86,156 @@
     transform: scale(1.05);
 }
 
-/* Feature container: imagen con overlay (misma idea que welcome) */
+/* ============================================================ */
+/* ☕ SECCIÓN PUNTOS (Sistema de Fidelización) */
+/* ============================================================ */
+.puntos-section {
+    padding: 80px 20px;
+    background-color: #f9f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puntos-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.titulo-puntos {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #654828;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo-puntos {
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 400;
+}
+
+.puntos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.punto-card {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.punto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(101, 72, 40, 0.15);
+    border-color: rgba(101, 72, 40, 0.1);
+}
+
+.punto-icono {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.punto-titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.punto-texto {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- BOTONES PUNTOS --- */
+.puntos-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-punto-primario,
+.btn-punto-secundario {
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    min-width: 200px;
+}
+
+/* Botón Primario (Café Sólido) - Ideal para Registro */
+.btn-punto-primario {
+    background-color: #f8f8f7;
+    color: #654828;
+    border: 2px solid #fbfaf9;
+    box-shadow: 0 4px 15px rgba(101, 72, 40, 0.3);
+}
+
+.btn-punto-primario:hover {
+    background-color: #f9f7f6;
+    border-color: #fefdfc;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(101, 72, 40, 0.5);
+}
+
+/* Botón Secundario (Borde Café) - Ideal para Login */
+.btn-punto-secundario {
+    background-color: transparent;
+    color: #654828;
+    border: 2px solid #654828;
+}
+
+.btn-punto-secundario:hover {
+    background-color: #654828;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================ */
+/* 🧩 SECCIÓN CARACTERÍSTICAS (Features) */
+/* ============================================================ */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+    margin-top: 6rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .feature-container {
     position: relative;
     width: 100%;
-    height: 260px;
+    height: 300px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -105,7 +243,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5vh;
+    transition: transform 0.3s ease;
 }
 
 .feature-image {
@@ -115,17 +253,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.35s ease;
-    opacity: 1;
+    transition: transform 0.35s ease;
 }
 
 .feature-overlay {
     position: absolute;
     z-index: 10;
     color: white;
-    padding: 1.2rem;
+    padding: 1.5rem;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
     width: 100%;
     height: 100%;
     display: flex;
@@ -136,73 +273,61 @@
 }
 
 .feature-overlay h2 {
-    font-size: 1.6rem;
-    margin-bottom: .6rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .feature-overlay p {
-    font-size: 1rem;
-    max-width: 320px;
+    font-size: 1.1rem;
+    max-width: 85%;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
 }
 
-/* Hover effect */
-.feature-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.35s ease;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.feature-container:hover .feature-image::after {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
+/* Hover Features */
 .feature-container:hover .feature-image {
-    transform: scale(1.06);
+    transform: scale(1.1);
 }
 
-/* 🧩 Sección de características del café */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-    margin-bottom: 5rem;
-    margin-top: 6rem;
-}
-
-.feature-container {
-    background-color: #fffaf5;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.feature:hover {
+.feature-container:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-.feature img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+/* ============================================================ */
+/* 📱 MEDIA QUERIES (Responsividad) */
+/* ============================================================ */
+@media (max-width: 768px) {
+    .welcome-overlay h1 {
+        font-size: 2.5rem;
+    }
+    
+    .welcome-container {
+        height: 350px;
+    }
 
-.feature h2 {
-    font-size: 1.4rem;
-    margin: 1rem;
-    color: #6b3e3e;
-}
+    .titulo-puntos {
+        font-size: 2rem;
+    }
+    
+    .puntos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.feature p {
-    margin: 0 1rem 1.5rem;
-    font-size: 1rem;
-    color: #5a3a3a;
+    .punto-card {
+        width: 100%;
+    }
+
+    /* Botones en móvil */
+    .puntos-botones {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .btn-punto-primario,
+    .btn-punto-secundario {
+        width: 100%;
+    }
 }

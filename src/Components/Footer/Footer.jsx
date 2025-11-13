@@ -18,7 +18,7 @@ const Footer = () => {
                 
                 {/* Sección 1: Marca (Brand) */}
                 <div className="footer-section footer-brand">
-                    <h3 className="footer-title">La Esquina del Café</h3>
+                    <h3 className="footer-title">Crazzy Coffee</h3>
                     <p>Tu dosis diaria de inspiración y sabor.</p>
                 </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
 
             {/* Barra inferior de Copyright */}
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} La Esquina del Café. Todos los derechos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Crazzy Coffee. Todos los derechos reservados.</p>
             </div>
         </footer>
     );

@@ -203,3 +203,25 @@
     background-color: #8a6236;
     box-shadow: 0 4px 12px rgba(101, 72, 40, 0.4);
 }
+
+/* === TEXTO "¿Ya tienes una cuenta? Iniciar sesión" === */
+.register-page .texto-iniciar-sesion {
+    text-align: center;
+    margin-top: 20px;      /* Separación de los botones superiores */
+    font-size: 0.95rem;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+.register-page .link-iniciar {
+    margin-left: 5px;
+    color: #654828;        /* Color café de tu marca */
+    font-weight: 700;      /* Negrita para resaltar */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-page .link-iniciar:hover {
+    color: #8a6236;
+    
+}
