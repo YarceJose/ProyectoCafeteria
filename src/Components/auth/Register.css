@@ -1,0 +1,205 @@
+/* Contenedor principal: Namespace para aislar estilos */
+.register-page {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(249, 245, 245, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* === HEADER === */
+.register-page .Encabezado-registro {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #654828;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.register-page .header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.register-page .Frase-encabezado {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f1f3f6;
+    margin: 0;
+}
+
+/* === CONTENIDO DIVIDIDO === */
+.register-page .contenido-principal {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgb(237, 236, 236);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(91, 89, 89, 0.5);
+    min-height: 600px;
+}
+
+/* Sección Izquierda: Imagen */
+.register-page .seccion-imagen {
+    flex: 1;
+    display: flex;
+    background-color: #000;
+}
+
+.register-page .imagen-lateral {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sección Derecha: Formulario */
+.register-page .Registro {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.register-page .titulo-Registro {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #654828;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* === INPUTS Y LABELS === */
+.register-page .Contenedor-nombre-apellido {
+    display: flex;
+    gap: 15px;
+}
+
+.register-page .input-group,
+.register-page .Contenedor-input-nombre,
+.register-page .Contenedor-input-apellido {
+    position: relative;
+    width: 100%;
+}
+
+/* ESTADO NORMAL: Fondo gris suave para que se note el cambio */
+.register-page .input,
+.register-page .input-nombre,
+.register-page .input-apellido {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Gris muy claro por defecto */
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease; /* Transición suave para el color y borde */
+    box-sizing: border-box;
+}
+
+/* HOVER: Aquí aplicamos el cambio a BLANCO que pediste */
+.register-page .input:hover,
+.register-page .input-nombre:hover,
+.register-page .input-apellido:hover {
+    background-color: #ffffff; /* Fondo blanco al pasar el mouse */
+    border-color: #999; /* Opcional: oscurece un poco el borde */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sutil sombra */
+}
+
+/* Label flotante */
+.register-page .user-label,
+.register-page .user-label-nombre,
+.register-page .user-label-apellido {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Transparente para que tome el color del input */
+    padding: 0 5px;
+    color: #888;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Estados Focus y Valid */
+.register-page .input:focus, 
+.register-page .input:valid,
+.register-page .input-nombre:focus, 
+.register-page .input-nombre:valid,
+.register-page .input-apellido:focus, 
+.register-page .input-apellido:valid {
+    outline: none;
+    background-color: #ffffff; /* Mantiene el blanco al escribir */
+    border: 2px solid #654828;
+}
+
+/* Animación del Label al enfocar */
+.register-page .input:focus ~ .user-label,
+.register-page .input:valid ~ .user-label,
+.register-page .input-nombre:focus ~ .user-label-nombre,
+.register-page .input-nombre:valid ~ .user-label-nombre,
+.register-page .input-apellido:focus ~ .user-label-apellido,
+.register-page .input-apellido:valid ~ .user-label-apellido {
+    top: 0;
+    font-size: 0.8rem;
+    color: #654828;
+    font-weight: 600;
+    background-color: #ffffff; /* Fondo blanco para tapar la línea */
+    z-index: 10;
+}
+
+/* === BOTONES === */
+.register-page .Contenedor-botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.register-page button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-page .btn-volver {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.register-page .btn-guardar {
+    background-color: #654828;
+    color: white;
+}
+
+.register-page .btn-volver:hover {
+    background-color: #d6d6d6;
+}
+
+.register-page .btn-guardar:hover {
+    background-color: #8a6236;
+    box-shadow: 0 4px 12px rgba(101, 72, 40, 0.4);
+}
