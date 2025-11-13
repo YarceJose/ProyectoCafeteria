@@ -62,7 +62,12 @@ const Home = () => {
             </div>
 
             <div className="feature-container">
-              <img src={zonaLectura} alt="Zona de Lectura" className="feature-image" />
+              <img src={zonaLectura} 
+              alt="Zona de Lectura" 
+              className="feature-image" 
+              loading="lazy"
+              onError={(e) => { e.currentTarget.src = zonaLectura; }}
+              />
               <div className="feature-overlay">
                 <h2>Zona de Lectura</h2>
                 <p>Sumérgete en un rincón tranquilo con buena luz, café aromático y libros que inspiran.</p>
@@ -70,7 +75,12 @@ const Home = () => {
             </div>
 
             <div className="feature-container">
-              <img src={patio} alt="Patio de Ideas" className="feature-image" />
+              <img src={patio} 
+              alt="Patio de Ideas" 
+              className="feature-image" 
+              loading="lazy"
+              onError={(e) => { e.currentTarget.src = patio; }}
+              />
               <div className="feature-overlay">
                 <h2>Patio De Ideas</h2>
                 <p>Espacio creativo para conectar, compartir y relajarte.</p>

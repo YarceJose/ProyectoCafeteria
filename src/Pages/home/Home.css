@@ -6,7 +6,7 @@
     /* Tipografía moderna */
     color: #4b2e2e;
     /* Color principal del texto */
-    height: 170vh;
+    height: 140vh;
 }
 
 /* 🟫 Sección Hero con imagen de bienvenida */
@@ -98,13 +98,14 @@
     position: relative;
     width: 100%;
     height: 260px;
-    border-radius: 12px;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5vh;
 }
 
 .feature-image {
@@ -172,7 +173,8 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 0 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
+    margin-top: 6rem;
 }
 
 .feature-container {
