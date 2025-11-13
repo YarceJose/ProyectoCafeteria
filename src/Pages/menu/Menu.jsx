@@ -1,5 +1,5 @@
 /**
- * Componente Menu - Página del Menú de Productos con Filtrado
+ * Componente Menu - Página del Catálogo de Productos con Filtrado
  * 
  * Este componente muestra el catálogo de productos de la cafetería con funcionalidad
  * de filtrado dinámico. Los usuarios pueden ver todas las categorías o filtrar por
@@ -14,24 +14,28 @@
  * - Sistema de filtrado por secciones (bebidas, comida, todas)
  * - Navegación por anclas con scroll automático
  * - Renderizado condicional de secciones
- * - Sección de bebidas con 4 productos principales
- * - Sección de comida con 4 productos principales
+ * - Sección de BEBIDAS con 8 productos (Americano, Espreso, Capuchino, Latte)
+ * - Sección de COMIDA con 4 productos (Croissant, Muffin, Brownie, Sándwich)
  * - Uso del componente ProductCard para mostrar cada producto
  * 
- * @state
- * - activeSection: Controla qué sección mostrar ('all', 'bebidas', 'comida')
- * 
- * @data
- * - bebidas: Array con datos de bebidas (Americano, Espreso, Capuchino, Latte)
- * - comida: Array con datos de comida (Croissant, Muffin, Brownie, Sándwich)
- * 
- * @navigation
+ * RUTAS SOPORTADAS:
  * - "/menu" - Muestra todas las secciones
  * - "/menu#bebidas" - Muestra solo la sección de bebidas
  * - "/menu#comida" - Muestra solo la sección de comida
  * 
+ * @state
+ * - activeSection: Controla qué sección mostrar ('all', 'bebidas', 'comida')
+ * 
+ * @hooks
+ * - useEffect: Escucha cambios en location.hash para actualizar filtro
+ * - useLocation: Obtiene la URL actual para navegación por anclas
+ * 
  * @example
  * <Menu />
+ *
+ * @note
+ * La navegación se realiza vía React Router con fragmentos (#)
+ * El scroll es suave hacia la sección seleccionada
  */
 
 import React, { useEffect, useState } from 'react';
@@ -40,42 +44,57 @@ import ProductCard from '../../Components/productos/ProductCard';
 import './Menu.css';
 
 const Menu = () => {
+  // Estado que controla qué sección mostrar
+  // Valores posibles: 'all' (todas), 'bebidas' o 'comida'
   const [activeSection, setActiveSection] = useState('all');
+  // Hook para obtener la URL actual incluyendo hash (#)
   const location = useLocation();
 
+  // Efecto para reaccionar a cambios en la URL (hash)
   useEffect(() => {
-    const handleScrollToSection = () => {
-      const hash = location.hash;
+  // Función para manejar la navegación por anclas
+  const handleScrollToSection = () => {
+    // Obtener el hash de la URL actual (ej: #bebidas, #comida)
+    const hash = location.hash;
+    
+    if (hash) {
+      // Extraer el nombre de la sección sin el # (ej: bebidas)
+      const sectionName = hash.substring(1);
       
-      if (hash) {
-        const sectionName = hash.substring(1);
-        
-        if (sectionName === 'bebidas' || sectionName === 'comida') {
-          setActiveSection(sectionName);
-        } else {
-          setActiveSection('all');
-        }
-        
-        const element = document.querySelector(hash);
-        
-        if (element) {
-          setTimeout(() => {
-            element.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }, 100);
-        }
+      // Validar que sea una sección válida
+      if (sectionName === 'bebidas' || sectionName === 'comida') {
+        // Actualizar estado para mostrar solo esa sección
+        setActiveSection(sectionName);
       } else {
+        // Si el hash no es válido, mostrar todas las secciones
         setActiveSection('all');
       }
-    };
+      
+      // Buscar el elemento HTML con ese ID
+      const element = document.querySelector(hash);
+      
+      if (element) {
+        // Pequeño delay para asegurar que el DOM está actualizado
+        setTimeout(() => {
+          // Hacer scroll suave hasta ese elemento
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    } else {
+      // Si no hay hash, mostrar todas las secciones
+      setActiveSection('all');
+    }
+  };
 
-    handleScrollToSection();
-  }, [location.hash]); // Array de dependencias vacío para ejecutar solo al montar
+  // Ejecutar manejo de navegación cuando cambiar la URL
+  handleScrollToSection();
+  }, [location.hash]);
 
   /**
-   * Datos de bebidas disponibles en el menú
+   * Array de BEBIDAS disponibles en el menú
    * Cada bebida contiene: id, name, description, price, image
    */
   const bebidas = [
@@ -140,8 +159,8 @@ const Menu = () => {
   ];
 
   /**
-   * Datos de comida disponible en el menú
-   * Cada comida contiene: id, name, description, price, image
+   * Array de COMIDA disponible en el menú
+   * Cada producto contiene: id, name, description, price, image
    */
   const comida = [
     {
@@ -176,10 +195,14 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
-      {/* Sección de bebidas - Muestra solo si activeSection es 'all' o 'bebidas' */}
+      {/* ============================================================ */}
+      {/* SECCIÓN DE BEBIDAS */}
+      {/* Muestra solo si activeSection es 'all' o 'bebidas' */}
+      {/* ============================================================ */}
       {(activeSection === 'all' || activeSection === 'bebidas') && (
         <section className="Contenido" id="bebidas">
           <h2 className="titulo-contenido">Bebidas</h2>
+          {/* Grid de tarjetas de bebidas */}
           <section className="cards">
             {bebidas.map(bebida => (
               <ProductCard key={bebida.id} product={bebida} />
@@ -188,10 +211,14 @@ const Menu = () => {
         </section>
       )}
 
-      {/* Sección de comida - Muestra solo si activeSection es 'all' o 'comida' */}
+      {/* ============================================================ */}
+      {/* SECCIÓN DE COMIDA */}
+      {/* Muestra solo si activeSection es 'all' o 'comida' */}
+      {/* ============================================================ */}
       {(activeSection === 'all' || activeSection === 'comida') && (
         <section className="Contenido" id="comida">
           <h2 className="titulo-contenido">Comestibles</h2>
+          {/* Grid de tarjetas de comida */}
           <section className="cards">
             {comida.map(item => (
               <ProductCard key={item.id} product={item} />

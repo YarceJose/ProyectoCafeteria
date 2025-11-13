@@ -1,3 +1,33 @@
+/**
+ * Componente Register - Formulario de Registro de Usuarios
+ *
+ * Este componente presenta un formulario completo de registro con campos
+ * para nombre, apellido, email, usuario y contraseña. Valida que todos
+ * los campos sean completados y simula el envío de datos.
+ *
+ * @component
+ * @returns {JSX.Element} Formulario de registro con imagen lateral
+ *
+ * @description
+ * Características:
+ * - Campos de entrada: nombre, apellido, email, usuario, contraseña
+ * - Validación requerida en todos los campos
+ * - Manejo de estado local con useState
+ * - Simulación de envío (logs en consola)
+ * - Redirección al home después del registro
+ * - Imagen lateral para contexto visual
+ * - Botones de volver y guardar
+ *
+ * @state
+ * - formData: Objeto con todos los campos del formulario (nombre, apellido, email, username, password)
+ *
+ * @example
+ * <Register />
+ *
+ * @note
+ * En producción, conectar con API backend para guardar datos de usuario
+ * Implementar validación adicional de email y contraseña
+ */
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Register.css';
@@ -5,6 +35,7 @@ import './Register.css';
 import coffee from '../../assets/registro-login/login-registro.png';
 
 const Register = () => {
+  // Estado del formulario: almacena todos los campos de registro
   const [formData, setFormData] = useState({
     nombre: '',
     apellido: '',
@@ -12,8 +43,14 @@ const Register = () => {
     username: '',
     password: ''
   });
+  // Hook para navegar entre rutas de React Router
   const navigate = useNavigate();
 
+  /**
+   * Maneja el cambio de valores en los inputs del formulario de registro
+   * Actualiza el estado de formData con los nuevos valores
+   * @param {Event} e - Evento del input que disparó el cambio
+   */
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -22,10 +59,18 @@ const Register = () => {
     }));
   };
 
+  /**
+   * Maneja el envío del formulario de registro
+   * Simula el envío de datos y redirige al home
+   * @param {Event} e - Evento del formulario
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
+    // En desarrollo: mostrar datos en consola para verificar
     console.log('Datos del registro:', formData);
+    // Mostrar confirmación al usuario
     alert('Registro exitoso!');
+    // Redirigir al home después del registro
     navigate('/');
   };
 
