@@ -11,7 +11,7 @@
  * FUNCIONES DISPONIBLES:
  * - navigateTo: Navega a una ruta específica (hard refresh)
  * - goBack: Retrocede una página en el historial
- * - goHome: Navega al home
+ * - goHome: Navega al inicio
  * - goToLogin: Navega a la página de login
  * - goToRegister: Navega a la página de registro
  *

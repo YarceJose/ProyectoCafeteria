@@ -13,7 +13,7 @@ src/
 ├── main.jsx ✅
 │   └── Inicializa React y monta la aplicación
 │   └── Configura BrowserRouter para navegación SPA
-│   └── Includes: Comentarios explicativos línea por líne
+│   └── Includes: Comentarios explicativos línea por línea
 │
 └── App.jsx ✅
     └── Componente raíz principal
